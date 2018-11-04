@@ -1,0 +1,86 @@
+#update{
+font-weight: 400; 
+margin-left: 50px; 
+font-size: 30px; 
+font-family: 'Montserrat', sans-serif;
+}
+
+.update{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; 
+    margin-left:30px; 
+    font-weight: 100;
+    background-color: #ecf0f1 
+}
+.input{
+    background-color: #ecf0f1;    
+    border: 0px; }
+.pupdate{
+    margin-left: 50px; 
+}
+#spanTransfer{
+    margin-left:70px; 
+    color: orange ;
+    cursor: pointer ; 
+}
+#spanemail{
+    color: orange ; 
+    margin-left: 40px; 
+    cursor: pointer ; 
+
+}
+#spanDeclare{
+    margin-left: 230px; 
+    color: orange;
+    cursor: pointer ; 
+
+}
+#addclient{
+font-weight: 400; 
+margin-left: 50px; 
+font-size: 30px; 
+font-family: 'Montserrat', sans-serif;
+}
+#input1{
+    background-color: #ecf0f1;   
+    margin-left: 20px; 
+    border: 0px;  
+
+}
+#input2{
+    background-color: #ecf0f1;    
+    margin-left: 35px;  
+    border: 0px;  
+}
+#input3{
+    background-color: #ecf0f1;
+    margin-left: 45px;  
+    border: 0px;  
+}
+#input4{
+    background-color: #ecf0f1;    
+    margin-left: 55px;  
+    border: 0px;  
+}
+.buttonAddNewClient{
+    border: 0px; 
+    border-radius: 0px;
+    height: 40px; 
+    width: 250px;
+    background-color: #F7CE3E ;
+    color : black ; 
+    font-weight: 700 ; 
+    margin-left: 25px; 
+    cursor: pointer;
+
+}
+#emailselect{
+    margin-left: 110px;
+    background-color: #ecf0f1;
+    border: 0px; 
+}
+#ownerselect{
+    margin-left: 10px;
+    background-color: #ecf0f1;
+    border: 0px; 
+}

@@ -1,0 +1,31 @@
+.clients{
+    font-size: 20px;
+    text-align: center; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; 
+}
+td ,th {
+    border: 1px solid #dddddd
+}
+table{
+border-collapse: collapse;
+width: 100%;     
+}
+.tr { 
+ background-color: #F7CE3E;
+ font-size: 25px; 
+}
+.searchInput{
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    height: 20px; 
+    width: 200px; 
+}
+.img{
+    height: 20px;
+    widows: 20px;
+}
+.select{
+    border-radius: 5px; 
+}
+
