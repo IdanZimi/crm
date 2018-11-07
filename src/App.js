@@ -14,14 +14,14 @@ class App extends Component {
           <div className="navbar">
             <div className="main-links">
               <ul>
-              <li><Link to="/">Clients</Link></li>
+              <li><Link to="/clients">Clients</Link></li>
               <li><Link to="/actions">Actions</Link></li>
               <li><Link to="/analytics">Analytics</Link></li>
               </ul>
             </div>
           </div>
           <div className="main-routes">
-            <Route path="/" exact component={Clients} />
+            <Route path="/clients" exact component={Clients} />
             <Route path="/actions" exact component={actions} />
             <Route path="/analytics" exact component={analytics} />
           </div>

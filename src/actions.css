@@ -14,12 +14,15 @@ font-family: 'Montserrat', sans-serif;
 }
 .input{
     background-color: #ecf0f1;    
-    border: 0px; }
+    border: 0px; ;
+    margin-left: 30px; 
+}
+    
 .pupdate{
     margin-left: 50px; 
 }
 #spanTransfer{
-    margin-left:70px; 
+    margin-left: 10px; 
     color: orange ;
     cursor: pointer ; 
 }
