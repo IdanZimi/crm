@@ -8,8 +8,12 @@ class Clients extends Component {
         super()
         this.state = {
             Clients: [],
+            search: ""
 
         }
+    }
+    searchChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value })
     }
     update = (name, srname, country, id) => {
         let clients = [...this.state.Clients]
@@ -20,9 +24,9 @@ class Clients extends Component {
         clientToUpdate.country = country
         clients[index] = clientToUpdate
         // this.setState({ Clients: clients })
-        axios.post('http://localhost:8080/clients' , {clientToUpdate}).then(res=>{
-             console.log(res);
-             console.log("hey")
+        axios.post('http://localhost:8080/clients', { clientToUpdate }).then(res => {
+            console.log(res);
+            console.log("hey")
         })
     }
 
@@ -36,23 +40,25 @@ class Clients extends Component {
     render() {
         return (
             <div>
-                <input type="text" className="searchInput" placeholder="search" />
+                <input type="text" className="searchInput" name="search" value={this.state.search} onChange={this.searchChange} placeholder="search by name...    " />
                 <select className="select">
                     <option value="name">Name</option>
-                    <option value="email">Email</option>
-                    <option value="owner">Owner</option>
-                    <option value="country">Country</option>
-                    <option value="sold">Sold</option>
+
                 </select>
                 <hr />
                 <table>
                     <tbody>
+
                         <HeaderClients />
                         {this.state.Clients.map(c => {
+                            if(c.name.includes(this.state.search))
                             return (
                                 <PrintClient key={c._id} id={c._id} client={c} update={this.update} />)
+                                
                         })}
+                        
 
+                        
                     </tbody>
                 </table>
 

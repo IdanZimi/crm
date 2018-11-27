@@ -5,21 +5,84 @@ import AddClient from './AddClient'
 import axios from 'axios'
 
 class actions extends Component {
-    constructor(){
+    constructor() {
         super()
         this.state = {
-            clients:[]
+            clients: []
         }
     }
+    addNewClient = (firstName, surName, country, owner) => {
+        if (firstName === "" || surName === "" || country === "" || owner === "") {
+            return alert("Please insert full details")
+        } else {
+            let NewClient = {
+                country: country,
+                email: "",
+                emailType: "",
+                firstContact: "",
+                name: firstName + " " + surName,
+                owner: owner,
+                sold: false
+            }
+            axios.post('http://localhost:8080/newClient', { NewClient }).then(res => {
+            })
+            alert("Congratulations , you just added a new client !")
+        }
+    }
+    changeEmail = (clientname, emailType) => {
+        if (clientname === "" || emailType === "" || emailType === "Email Type") {
+            return alert("Please insert full details")
+        } else {
+            let clients = [...this.state.clients]
+            let clientToUpdate = clients.find(c => c.name === clientname)
+            // let index = clients.indexOf(clientToUpdate)
+            clientToUpdate.emailType = emailType
+            // clients[index] = clientToUpdate
+            axios.post('http://localhost:8080/send', { clientToUpdate }).then(res => {
+                console.log(res);
+                console.log("hey")
+            })
+            alert("Email have been sent")
+        }
+    }
+    transfer = (clientname, ownername) => {
+        if (clientname === "" || ownername === "") {
+            return alert("Please insert full details")
+        } else {
+            let clients = [...this.state.clients]
+            let clientToUpdate = clients.find(c => c.name === clientname)
+            // let index = clients.indexOf(clientToUpdate)
+            clientToUpdate.owner = ownername
+            // clients[index] = clientToUpdate
+            axios.post('http://localhost:8080/transfer', { clientToUpdate }).then(res => {
+                console.log(res);
+                console.log("hey")
+            })
+            alert("Owner have been transfered")
+        }
+    }
+    declareSale = (clientname) => {
+        if (clientname === "") {
+            return alert("Please insert full details")
+        } else {
+            let clients = [...this.state.clients]
+            let clientToUpdate = clients.find(c => c.name === clientname)
+            // let index = clients.indexOf(clientToUpdate)
+            clientToUpdate.sold = true
+            // clients[index] = clientToUpdate
+            axios.post('http://localhost:8080/declare', { clientToUpdate }).then(res => {
+                console.log(res);
+                console.log("hey")
+            })
+            alert("Sold!")
+        }
 
-    transfer=(client , owner)=>{
-        
     }
 
-    componentDidMount(){
+    componentDidMount() {
         axios.get('http://localhost:8080/actions').then((response) => {
-            
-            this.setState({ clients: response.data },function(){
+
+            this.setState({ clients: response.data }, function () {
                 console.log(response.data)
 
             })
@@ -34,8 +97,8 @@ class actions extends Component {
     render() {
         return (
             <div>
-                <Update clients={this.state.clients}/>
-                <AddClient/>
+                <Update clients={this.state.clients} transfer={this.transfer} changeEmail={this.changeEmail} declareSale={this.declareSale} />
+                <AddClient addNewClient={this.addNewClient} />
             </div>
         );
     }

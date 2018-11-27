@@ -87,3 +87,10 @@ font-family: 'Montserrat', sans-serif;
     background-color: #ecf0f1;
     border: 0px; 
 }
+#owner{
+    position: absolute; 
+    left: 10%;
+    top: 76%;  
+    background-color: #ecf0f1;
+    border: 0px;  
+}

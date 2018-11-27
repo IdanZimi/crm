@@ -5,7 +5,7 @@ class analytics extends Component {
         return (
 
             <div>
-              <span>kaka</span>
+              <span></span>
             </div>
 
         );
