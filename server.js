@@ -3,7 +3,8 @@ var bodyParser = require('body-parser');
 const SERVER_PORT = 8080;
 const mongoose = require('mongoose');
 const Client = require('./models/clientModel')
-mongoose.connect('mongodb://localhost/clientsDB', function () {
+
+mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/clientsDB', function () {
     console.log("DB connection established!!!");
 })
 var app = express();
