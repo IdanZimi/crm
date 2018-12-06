@@ -13,11 +13,11 @@
     "react-scripts": "2.1.0"
   },
   "scripts": {
+    "react": "react-scripts start",
     "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject", 
-    "react": "react-scripts start"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
