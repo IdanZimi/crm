@@ -24,7 +24,7 @@ class actions extends Component {
                 owner: owner,
                 sold: false
             }
-            axios.post('/newClient', { NewClient }).then(res => {
+            axios.post('/newClient-api', { NewClient }).then(res => {
             })
             alert("Congratulations , you just added a new client !")
         }
@@ -38,7 +38,7 @@ class actions extends Component {
             // let index = clients.indexOf(clientToUpdate)
             clientToUpdate.emailType = emailType
             // clients[index] = clientToUpdate
-            axios.post('/send', { clientToUpdate }).then(res => {
+            axios.post('/send-api', { clientToUpdate }).then(res => {
                 console.log(res);
                 console.log("hey")
             })
@@ -54,7 +54,7 @@ class actions extends Component {
             // let index = clients.indexOf(clientToUpdate)
             clientToUpdate.owner = ownername
             // clients[index] = clientToUpdate
-            axios.post('/transfer', { clientToUpdate }).then(res => {
+            axios.post('/transfer-api', { clientToUpdate }).then(res => {
                 console.log(res);
                 console.log("hey")
             })
@@ -70,7 +70,7 @@ class actions extends Component {
             // let index = clients.indexOf(clientToUpdate)
             clientToUpdate.sold = true
             // clients[index] = clientToUpdate
-            axios.post('/declare', { clientToUpdate }).then(res => {
+            axios.post('/declare-api', { clientToUpdate }).then(res => {
                 console.log(res);
                 console.log("hey")
             })
@@ -80,7 +80,7 @@ class actions extends Component {
     }
 
     componentDidMount() {
-        axios.get('/actions').then((response) => {
+        axios.get('/actions-api').then((response) => {
 
             this.setState({ clients: response.data }, function () {
                 console.log(response.data)
