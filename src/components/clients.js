@@ -24,14 +24,14 @@ class Clients extends Component {
         clientToUpdate.country = country
         clients[index] = clientToUpdate
         // this.setState({ Clients: clients })
-        axios.post('/api/clients', { clientToUpdate }).then(res => {
+        axios.post('/clients', { clientToUpdate }).then(res => {
             console.log(res);
             console.log("hey")
         })
     }
 
     componentDidMount() {
-        axios.get('/api/clients').then((response) => {
+        axios.get('/clients').then((response) => {
             console.log(response.data)
             this.setState({ Clients: response.data })
         })
