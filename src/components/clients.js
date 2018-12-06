@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../clients.css'
+import '../css/clients.css'
 import PrintClient from './printClient';
 import HeaderClients from './Header';
 import axios from 'axios'

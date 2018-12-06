@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../actions.css'
+import '../css/actions.css'
 import Update from './update'
 import AddClient from './AddClient'
 import axios from 'axios'

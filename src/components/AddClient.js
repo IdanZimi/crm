@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../actions.css'
+import '../css/actions.css'
 
 class AddClient extends Component {
     constructor() {

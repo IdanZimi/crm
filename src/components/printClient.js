@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../clients.css'
+import '../css/clients.css'
 import Popup from './popUp'
 
 class PrintClient extends Component {

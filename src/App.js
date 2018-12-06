@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import actions from './components/actions.js'
 import analytics from './components/analytics.js'
