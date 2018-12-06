@@ -38,7 +38,7 @@ class actions extends Component {
             // let index = clients.indexOf(clientToUpdate)
             clientToUpdate.emailType = emailType
             // clients[index] = clientToUpdate
-            axios.post('/send', { clientToUpdate }).then(res => {
+            axios.post('/api/send', { clientToUpdate }).then(res => {
                 console.log(res);
                 console.log("hey")
             })
