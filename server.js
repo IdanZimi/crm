@@ -8,6 +8,7 @@ mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/clientsDB',
     console.log("DB connection established!!!");
 })
 var app = express();
+app.use(express.static('build'))
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
 app.use(bodyParser.json());

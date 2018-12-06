@@ -24,7 +24,7 @@ class actions extends Component {
                 owner: owner,
                 sold: false
             }
-            axios.post('http://localhost:8080/newClient', { NewClient }).then(res => {
+            axios.post('/newClient', { NewClient }).then(res => {
             })
             alert("Congratulations , you just added a new client !")
         }
@@ -38,7 +38,7 @@ class actions extends Component {
             // let index = clients.indexOf(clientToUpdate)
             clientToUpdate.emailType = emailType
             // clients[index] = clientToUpdate
-            axios.post('http://localhost:8080/send', { clientToUpdate }).then(res => {
+            axios.post('/send', { clientToUpdate }).then(res => {
                 console.log(res);
                 console.log("hey")
             })
@@ -54,7 +54,7 @@ class actions extends Component {
             // let index = clients.indexOf(clientToUpdate)
             clientToUpdate.owner = ownername
             // clients[index] = clientToUpdate
-            axios.post('http://localhost:8080/transfer', { clientToUpdate }).then(res => {
+            axios.post('/transfer', { clientToUpdate }).then(res => {
                 console.log(res);
                 console.log("hey")
             })
@@ -70,7 +70,7 @@ class actions extends Component {
             // let index = clients.indexOf(clientToUpdate)
             clientToUpdate.sold = true
             // clients[index] = clientToUpdate
-            axios.post('http://localhost:8080/declare', { clientToUpdate }).then(res => {
+            axios.post('/declare', { clientToUpdate }).then(res => {
                 console.log(res);
                 console.log("hey")
             })
@@ -80,7 +80,7 @@ class actions extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8080/actions').then((response) => {
+        axios.get('/actions').then((response) => {
 
             this.setState({ clients: response.data }, function () {
                 console.log(response.data)
