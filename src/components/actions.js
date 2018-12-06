@@ -80,7 +80,7 @@ class actions extends Component {
     }
 
     componentDidMount() {
-        axios.get('/actions-api').then((response) => {
+        axios.get('/actions').then((response) => {
 
             this.setState({ clients: response.data }, function () {
                 console.log(response.data)
