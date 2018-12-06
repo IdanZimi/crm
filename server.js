@@ -28,6 +28,9 @@ app.use(function (req, res, next) {
 })
 app.use('/' , clientAPI)
 app.use('/' , actionsAPI)
+app.get('*' , (req ,res)=>{
+    res.sendFile(path.join(__dirname, '/build/index.html'))
+})
 
 
 
